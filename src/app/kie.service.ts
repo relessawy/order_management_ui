@@ -27,7 +27,7 @@ export class KieService {
   startProcess(filename: string): Observable<any> {
     const url = `${baseUrl}/server/containers/${containerId}/processes/${processId}/instances`;
     const body = {
-      filename: filename
+      laptop: filename
     };
     
     return this.http.post<any>(url, body, httpOptions).pipe(
