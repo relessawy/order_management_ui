@@ -5,6 +5,6 @@ oc project ${project_name}
 
 oc new-app --strategy="source" \
 --name="angular-app" \
---code="https://github.com/mechevarria/ocp-pam"
+--code="https://github.com/relessawy/ocp-pam"
 
 oc expose svc/angular-app
