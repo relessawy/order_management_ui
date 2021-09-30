@@ -5,8 +5,8 @@ import { MessageService } from './message/message.service';
 import { Observable, of } from 'rxjs/index';
 
 const baseUrl = '/services/rest';
-const processId = 'malware.inspect';
-const containerId = 'malware_1.0.0-SNAPSHOT';
+const processId = 'procurement-process.OrderAsset';
+const containerId = 'procurement-process_1.0.0-SNAPSHOT';
 const user = 'pamAdmin';
 const password = 'redhatpam1!'
 
