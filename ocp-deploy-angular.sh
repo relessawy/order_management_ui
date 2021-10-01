@@ -1,6 +1,6 @@
 #!/bin/bash
 
-project_name="rhpam-mod1"
+project_name="rhpam-mod2"
 oc project ${project_name}
 
 oc new-app --strategy="source" \

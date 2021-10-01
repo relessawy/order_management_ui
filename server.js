@@ -11,7 +11,7 @@ let bodyParser = require('body-parser');
 let app = express();
 
 app.set('port', process.env.PORT || 8080);
-app.set('kie', process.env.KIE || 'http://172.30.8.15:8080');
+app.set('kie', process.env.KIE || 'http://172.30.150.119:8080');
 
 
 app.use(compression());
