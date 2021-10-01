@@ -4,8 +4,11 @@
     <div class="card-body">
       <form class="card-text" (ngSubmit)="submit()" #processForm="ngForm">
         <div class="form-group">
-          <label for="filename">Filename</label>
-          <input type="text" class="form-control" name="filename" [(ngModel)]="filename" placeholder="filename" />
+          <label for="laptopname">Select your Laptop</label>
+          <combo-box
+          [dataList] = "laptopList"
+          [columnName] = "'laptopname'"
+        ></combo-box>
         </div>
         <button type="submit" class="btn btn-primary">Start</button>
       </form>
