@@ -5,10 +5,9 @@
       <form class="card-text" (ngSubmit)="submit()" #processForm="ngForm">
         <div class="form-group">
           <label for="laptopname">Select your Laptop</label>
-          <combo-box
-          [dataList] = "laptopList"
-          [columnName] = "'laptopname'"
-        ></combo-box>
+          <select [(ngModel)]="selectedLevel" (change)="selected()">
+            <option *ngFor="let item of data" [ngValue]="item">{{item.name}}</option>
+          </select>
         </div>
         <button type="submit" class="btn btn-primary">Start</button>
       </form>
