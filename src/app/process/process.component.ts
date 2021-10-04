@@ -1,6 +1,8 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { KieService } from '../kie.service';
-import { BsModalService, BsModalRef, ModalOptions } from 'ngx-bootstrap';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal';
+import { ModalOptions } from 'ngx-bootstrap/modal/modal-options.class';
 import { SafeHtml, DomSanitizer } from '@angular/platform-browser';
 
 @Component({

@@ -21,10 +21,10 @@
               <td>{{ task['task-status'] }}</td>
               <td>{{ task['task-created-on']['java.util.Date'] | date }}</td>
               <td>
-                <button *ngIf="task['task-status'] === 'Ready'" (click)="claimAndStart(task['task-id'])" type="button" class="btn btn-primary mr-2">
+                <button *ngIf="task['task-status'] === 'Ready'" (click)="claimAndStart(task['task-id'], task['task-name'])" type="button" class="btn btn-primary mr-2">
                   Claim
                 </button>
-                <button *ngIf="task['task-status'] === 'InProgress'" (click)="go(task['task-id'])" type="button" class="btn btn-success">
+                <button *ngIf="task['task-status'] === 'InProgress'" (click)="go(task['task-id'], task['task-name'])" type="button" class="btn btn-success">
                   Go
                 </button>
               </td>

@@ -4,7 +4,7 @@
     <div class="card-body">
       <form class="card-text" (ngSubmit)="submit()" #processForm="ngForm">
         <div class="form-group">
-          <label for="laptopname">Select your Laptop</label>
+          <label for="laptopname">Select your Laptop : </label>
           <select [(ngModel)]="selectedLevel" (change)="selected()">
             <option *ngFor="let item of data" [ngValue]="item">{{item.name}}</option>
           </select>

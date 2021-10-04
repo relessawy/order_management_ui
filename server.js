@@ -5,14 +5,15 @@ let express = require('express');
 let logger = require('morgan');
 let http = require('http');
 let path = require('path');
-let proxy = require('http-proxy-middleware');
+//let proxy = require('http-proxy-middleware');
 let bodyParser = require('body-parser');
 
 let app = express();
 
 app.set('port', process.env.PORT || 8080);
-app.set('kie', process.env.KIE || 'http://172.30.150.119:8080');
+app.set('kie', process.env.KIE || 'http://mypamdemo-kieserver-http-default.apps.cluster-2a2a.2a2a.sandbox1012.opentlc.com/');
 
+const { createProxyMiddleware } = require('http-proxy-middleware');
 
 app.use(compression());
 app.use(logger('combined'));
@@ -39,7 +40,7 @@ app.use(bodyParser.urlencoded({
 // proxy to kie server
 app.use(
   '/services/*',
-  proxy({
+  createProxyMiddleware({
     target: app.get('kie'),
     secure: false,
     changeOrigin: true,

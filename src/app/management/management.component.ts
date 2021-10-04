@@ -4,18 +4,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MessageService } from '../message/message.service';
 
 @Component({
-  selector: 'app-approve',
-  templateUrl: './approve.component.html'
+  selector: 'app-management',
+  templateUrl: './management.component.html'
 })
-export class ApproveComponent implements OnInit {
+export class ManagementComponent implements OnInit {
   task: any = null;
   taskInstanceId: number;
-  targetPrice: number;
-  selectedUrgency;
-  data:Array<Object> = [
-      {id: 0, name: "low"},
-      {id: 1, name: "high"}
-  ];
+  approval: boolean;
 
   constructor(private kieService: KieService, private route: ActivatedRoute, private messageService: MessageService, private router: Router) { }
 
@@ -25,9 +20,9 @@ export class ApproveComponent implements OnInit {
     });
   }
 
-  approve(): void {
-    this.kieService.complete(this.taskInstanceId, this.targetPrice, this.selectedUrgency.name).subscribe(() => {
-      this.messageService.info('Task has been Approved');
+  management(): void {
+    this.kieService.managementcomplete(this.taskInstanceId, true).subscribe(() => {
+      this.messageService.info('Management Approval recorded and purchase sent to procurement');
       this.router.navigate(['/home/task']);
     });
   }
@@ -42,8 +37,5 @@ export class ApproveComponent implements OnInit {
     });
   }
 
-  selected(){
-    //alert(this.selectedUrgency.name)
-  }
 
 }

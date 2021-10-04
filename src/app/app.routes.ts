@@ -4,6 +4,8 @@ import { TaskComponent } from './task/task.component';
 import { StartComponent } from './start/start.component';
 import { ProcessComponent } from './process/process.component';
 import { ApproveComponent } from './approve/approve.component';
+import { SupplierComponent } from './supplier/supplier.component';
+import { ManagementComponent } from './management/management.component';
 
 export const AppRoutes: Routes = [
   {
@@ -37,6 +39,20 @@ export const AppRoutes: Routes = [
       {
         path: 'approve',
         component: ApproveComponent,
+        data: {
+          breadcrumb: 'Processes'
+        }
+      },
+      {
+        path: 'supplier',
+        component: SupplierComponent,
+        data: {
+          breadcrumb: 'Processes'
+        }
+      },
+      {
+        path: 'management',
+        component: ManagementComponent,
         data: {
           breadcrumb: 'Processes'
         }

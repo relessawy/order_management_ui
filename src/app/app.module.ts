@@ -20,6 +20,8 @@ import { TaskComponent } from './task/task.component';
 import { StartComponent } from './start/start.component';
 import { ProcessComponent } from './process/process.component';
 import { ApproveComponent } from './approve/approve.component';
+import { SupplierComponent } from './supplier/supplier.component';
+import { ManagementComponent } from './management/management.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { ApproveComponent } from './approve/approve.component';
     TaskComponent,
     StartComponent,
     ProcessComponent,
-    ApproveComponent
+    ApproveComponent,
+    ManagementComponent,
+    SupplierComponent
   ],
   imports: [
     BrowserModule,

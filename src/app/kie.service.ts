@@ -2,13 +2,18 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { MessageService } from './message/message.service';
-import { Observable, of } from 'rxjs/index';
+import { Observable, of } from 'rxjs';
 
 const baseUrl = '/services/rest';
-const processId = 'procurement-process.OrderAsset';
+const processId = 'procurement_process.OrderAsset';
 const containerId = 'procurement-process_1.0.0-SNAPSHOT';
-const user = 'pamAdmin';
-const password = 'redhatpam1!'
+//const user = 'pamAdmin';
+//const password = 'redhatpam1!'
+//services/rest/server/containers/procurement-process_1.0.0-SNAPSHOT/processes/procurement-process.OrderAsset/instances
+
+const user = 'adminUser';
+const password = 'RedHat'
+
 
 const headers: HttpHeaders = new HttpHeaders()
   .append('Content-Type', 'application/json')
@@ -52,7 +57,7 @@ export class KieService {
   }
 
   getTasks(): Observable<any> {
-    const url = `${baseUrl}/server/queries/tasks/instances/pot-owners`;
+    const url = `${baseUrl}/server/queries/tasks/instances`;
     return this.http.get<any>(url, httpOptions).pipe(
       catchError(res => this.handleError('getTasks()', res))
     );
@@ -79,10 +84,33 @@ export class KieService {
     );
   }
 
-  complete(taskInstanceId: number): Observable<any> {
+  managementcomplete(taskInstanceId: number, approval: boolean): Observable<any> {
     const url = `${baseUrl}/server/containers/${containerId}/tasks/${taskInstanceId}/states/completed`;
+    const body = {
+      approved: approval
+    };
+    return this.http.put<any>(url, body, httpOptions).pipe(
+      catchError(res => this.handleError('complete()', res))
+    );
+  }
 
-    return this.http.put<any>(url, null, httpOptions).pipe(
+  complete(taskInstanceId: number, targetPrice: number, urgency: string ): Observable<any> {
+    const url = `${baseUrl}/server/containers/${containerId}/tasks/${taskInstanceId}/states/completed`;
+    const body = {
+      targetPrice: targetPrice,
+      urgency: urgency 
+    };
+    return this.http.put<any>(url, body, httpOptions).pipe(
+      catchError(res => this.handleError('complete()', res))
+    );
+  }
+
+  suppliercomplete(taskInstanceId: number, supplierPrice: number): Observable<any> {
+    const url = `${baseUrl}/server/containers/${containerId}/tasks/${taskInstanceId}/states/completed`;
+    const body = {
+      supplierPrice: supplierPrice
+    };
+    return this.http.put<any>(url, body, httpOptions).pipe(
       catchError(res => this.handleError('complete()', res))
     );
   }

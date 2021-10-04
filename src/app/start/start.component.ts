@@ -13,7 +13,7 @@ export class StartComponent implements OnInit {
   data:Array<Object> = [
       {id: 0, name: "Macbook Pro"},
       {id: 1, name: "Surface Pro"},
-      {id: 1, name: "Chromebook"}
+      {id: 2, name: "Chromebook"}
   ];
 
   constructor(private kieService: KieService, private messageService: MessageService, private router: Router) {
@@ -27,7 +27,7 @@ export class StartComponent implements OnInit {
   }
 
   selected(){
-    alert(this.selectedLevel.name)
+    //alert(this.selectedLevel.name)
   }
 
   ngOnInit() {

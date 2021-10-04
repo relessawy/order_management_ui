@@ -13,17 +13,22 @@ export class TaskComponent implements OnInit {
   
   constructor(private kieService: KieService, private messageService: MessageService, private router: Router) { }
 
-  claimAndStart(taskId: number): void {
+  claimAndStart(taskId: number , taskName: string): void {
     this.kieService.claim(taskId).pipe(
       mergeMap(() => this.kieService.start(taskId))
     ).subscribe(() => {
       this.messageService.info(`Task ${taskId} started`);
-      this.go(taskId);
+      this.go(taskId, taskName);
     });
   }
 
-  go(taskId: number): void {
-    this.router.navigate(['/home/approve'], { queryParams: { id: taskId } });
+  go(taskId: number, taskName: string): void {
+    if (taskName == "Request Offer")
+      this.router.navigate(['/home/approve'], { queryParams: { id: taskId } });
+    else if (taskName == "Prepare Offer")
+      this.router.navigate(['/home/supplier'], { queryParams: { id: taskId } });
+    else
+      this.router.navigate(['/home/management'], { queryParams: { id: taskId } });
   }
 
   load(): void {
