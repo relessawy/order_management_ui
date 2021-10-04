@@ -57,7 +57,7 @@ export class KieService {
   }
 
   getTasks(): Observable<any> {
-    const url = `${baseUrl}/server/queries/tasks/instances`;
+    const url = `${baseUrl}/server/queries/tasks/instances/pot-owners`;
     return this.http.get<any>(url, httpOptions).pipe(
       catchError(res => this.handleError('getTasks()', res))
     );

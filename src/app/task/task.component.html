@@ -24,6 +24,9 @@
                 <button *ngIf="task['task-status'] === 'Ready'" (click)="claimAndStart(task['task-id'], task['task-name'])" type="button" class="btn btn-primary mr-2">
                   Claim
                 </button>
+                <button *ngIf="task['task-status'] === 'Reserved'" (click)="startTask(task['task-id'], task['task-name'])" type="button" class="btn btn-primary mr-2">
+                  Start
+                </button>
                 <button *ngIf="task['task-status'] === 'InProgress'" (click)="go(task['task-id'], task['task-name'])" type="button" class="btn btn-success">
                   Go
                 </button>

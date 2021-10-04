@@ -22,6 +22,14 @@ export class TaskComponent implements OnInit {
     });
   }
 
+  startTask(taskId: number, taskName: string): void {
+    this.kieService.start(taskId).subscribe(() => {
+      this.messageService.info(`Task ${taskId} started`);
+      this.go(taskId, taskName);
+
+    });
+  }
+
   go(taskId: number, taskName: string): void {
     if (taskName == "Request Offer")
       this.router.navigate(['/home/approve'], { queryParams: { id: taskId } });
