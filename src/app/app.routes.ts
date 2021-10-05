@@ -6,6 +6,7 @@ import { ProcessComponent } from './process/process.component';
 import { ApproveComponent } from './approve/approve.component';
 import { SupplierComponent } from './supplier/supplier.component';
 import { ManagementComponent } from './management/management.component';
+import { SupplierOfferComponent } from './supplier-offer/supplier-offer.component';
 
 export const AppRoutes: Routes = [
   {
@@ -19,21 +20,21 @@ export const AppRoutes: Routes = [
         path: 'task',
         component: TaskComponent,
         data: {
-          breadcrumb: 'Tasks'
+          breadcrumb: 'Laptop Requests'
         }
       },
       {
         path: 'start',
         component: StartComponent,
         data: {
-          breadcrumb: 'Start Process'
+          breadcrumb: 'Request Laptop'
         }
       },
       {
         path: 'process',
         component: ProcessComponent,
         data: {
-          breadcrumb: 'Processes'
+          breadcrumb: 'Orders'
         }
       },
       {
@@ -48,6 +49,13 @@ export const AppRoutes: Routes = [
         component: SupplierComponent,
         data: {
           breadcrumb: 'Processes'
+        }
+      },
+      {
+        path: 'supplieroffer',
+        component: SupplierOfferComponent,
+        data: {
+          breadcrumb: 'Requests for Offers'
         }
       },
       {

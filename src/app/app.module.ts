@@ -23,6 +23,7 @@ import { ApproveComponent } from './approve/approve.component';
 import { SupplierComponent } from './supplier/supplier.component';
 import { ManagementComponent } from './management/management.component';
 import { PipeComponent } from './pipe/pipe.component';
+import { SupplierOfferComponent } from './supplier-offer/supplier-offer.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { PipeComponent } from './pipe/pipe.component';
     ApproveComponent,
     ManagementComponent,
     SupplierComponent,
-    PipeComponent
+    PipeComponent,
+    SupplierOfferComponent
   ],
   imports: [
     BrowserModule,
