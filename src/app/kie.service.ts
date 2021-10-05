@@ -7,12 +7,12 @@ import { Observable, of } from 'rxjs';
 const baseUrl = '/services/rest';
 const processId = 'procurement_process.OrderAsset';
 const containerId = 'procurement-process_1.0.0-SNAPSHOT';
-//const user = 'pamAdmin';
-//const password = 'redhatpam1!'
+const user = 'pamAdmin';
+const password = 'redhatpam1!'
 //services/rest/server/containers/procurement-process_1.0.0-SNAPSHOT/processes/procurement-process.OrderAsset/instances
 
-const user = 'adminUser';
-const password = 'RedHat'
+//const user = 'adminUser';
+//const password = 'RedHat'
 
 
 const headers: HttpHeaders = new HttpHeaders()

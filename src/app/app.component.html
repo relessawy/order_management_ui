@@ -1,8 +1,10 @@
 <app-header></app-header>
-<div>
-  <app-sidebar></app-sidebar>
-  <main>
-    <app-breadcrumb></app-breadcrumb>
-    <div class="container"><router-outlet></router-outlet></div>
-  </main>
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-2"><app-sidebar></app-sidebar></div>
+    <div class="col-8">
+      <app-breadcrumb></app-breadcrumb>
+      <div class="container"><router-outlet></router-outlet></div>
+    </div>
+  </div>
 </div>

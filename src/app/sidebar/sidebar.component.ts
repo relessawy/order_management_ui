@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {
   faChartPie,
   faTable,
-  IconDefinition
+  IconDefinition,
+  faLaptop
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faWpforms } from '@fortawesome/free-brands-svg-icons';
 
@@ -14,13 +15,15 @@ export class SidebarComponent implements OnInit {
   chartIcon: IconDefinition;
   tableIcon: IconDefinition;
   githubIcon: IconDefinition;
-  formIcon: IconDefinition;
+  formIcon: IconDefinition
+  laptopIcon: IconDefinition
 
   constructor() {
     this.chartIcon = faChartPie;
     this.tableIcon = faTable;
     this.githubIcon = faGithub;
     this.formIcon = faWpforms;
+    this.laptopIcon = faLaptop;
   }
 
   ngOnInit() {}

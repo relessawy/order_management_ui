@@ -1,51 +1,36 @@
-<div class="sidebar-wrapper">
-  <nav class="sidebar">
-    <ul class="nav">
-      <li class="nav-item">
-        <a
-          class="nav-link"
-          routerLink="home/start"
-          routerLinkActive="nav-link-primary"
-        >
-          <i class="nav-icon icon-notebook"></i> Request Asset
-        </a>
-      </li>
-      <li class="nav-item">
-        <a
+<div class="d-flex" id="wrapper">
+  <!-- Sidebar -->
+  <div class="bg-light border-right" id="sidebar-wrapper">
+    <div class="sidebar-heading">Order Management</div>
+    <div class="list-group list-group-flush">
+      <a
+        class="nav-link"
+        routerLink="home/start"
+        routerLinkActive="nav-link-primary"
+      >
+      <fa-icon [icon]="laptopIcon" class="nav-icon"></fa-icon> Request Laptop
+      </a>
+      <a
           class="nav-link"
           routerLink="home/process"
           routerLinkActive="nav-link-primary"
         >
           <i class="nav-icon icon-list"></i> Orders
         </a>
-      </li>
-      <li class="nav-item">
         <a
-          class="nav-link"
-          routerLink="home/task"
-          routerLinkActive="nav-link-primary"
-        >
-          <i class="nav-icon icon-grid"></i> Tasks
-        </a>
-      </li>
-      <li class="nav-item">
-        <a
+        class="nav-link"
+        routerLink="home/task"
+        routerLinkActive="nav-link-primary"
+      >
+        <i class="nav-icon icon-grid"></i> Tasks
+      </a>
+      <a
           class="nav-link"
           routerLink="home/approve"
           routerLinkActive="nav-link-primary"
         >
           <i class="nav-icon icon-check"></i> Approval
         </a>
-      </li>
-      <li class="nav-item">
-        <a
-          class="nav-link"
-          href="https://github.com/relessawy/ocp-pam"
-          target="_blank"
-        >
-          <fa-icon [icon]="githubIcon" class="nav-icon"></fa-icon> Github
-        </a>
-      </li>
-    </ul>
-  </nav>
+    </div>
+  </div>
 </div>
