@@ -8,8 +8,12 @@ import { mergeMap } from 'rxjs/operators';
   selector: 'app-task',
   templateUrl: './task.component.html'
 })
+
+
+
 export class TaskComponent implements OnInit {
   tasks: any[] = new Array();
+  
   
   constructor(private kieService: KieService, private messageService: MessageService, private router: Router) { }
 

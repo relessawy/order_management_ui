@@ -22,6 +22,7 @@ import { ProcessComponent } from './process/process.component';
 import { ApproveComponent } from './approve/approve.component';
 import { SupplierComponent } from './supplier/supplier.component';
 import { ManagementComponent } from './management/management.component';
+import { PipeComponent } from './pipe/pipe.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ManagementComponent } from './management/management.component';
     ProcessComponent,
     ApproveComponent,
     ManagementComponent,
-    SupplierComponent
+    SupplierComponent,
+    PipeComponent
   ],
   imports: [
     BrowserModule,
