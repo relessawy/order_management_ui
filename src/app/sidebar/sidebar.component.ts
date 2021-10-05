@@ -4,7 +4,8 @@ import {
   faTable,
   IconDefinition,
   faLaptop,
-  faShoppingCart
+  faShoppingCart,
+  faHandHoldingUsd
 } from '@fortawesome/free-solid-svg-icons/';
 import { faGithub, faWpforms } from '@fortawesome/free-brands-svg-icons';
 
@@ -19,6 +20,7 @@ export class SidebarComponent implements OnInit {
   formIcon: IconDefinition;
   laptopIcon: IconDefinition;
   shoppingCartIcon: IconDefinition;
+  handIcon: IconDefinition;
 
   constructor() {
     this.chartIcon = faChartPie;
@@ -27,6 +29,7 @@ export class SidebarComponent implements OnInit {
     this.formIcon = faWpforms;
     this.laptopIcon = faLaptop;
     this.shoppingCartIcon=faShoppingCart;
+    this.handIcon=faHandHoldingUsd;
   }
 
   ngOnInit() {}
