@@ -11,7 +11,7 @@ let bodyParser = require('body-parser');
 let app = express();
 
 app.set('port', process.env.PORT || 8080);
-app.set('kie', process.env.KIE || 'http://kieserver-mod1-rhpam-mod1.apps.cluster-c2cd.c2cd.sandbox1007.opentlc.com//');
+app.set('kie', process.env.KIE || 'http://kieserver-mod1-rhpam-mod1.apps.cluster-prgjc.prgjc.sandbox1445.opentlc.com//');
 
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
