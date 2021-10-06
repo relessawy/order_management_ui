@@ -24,6 +24,8 @@ import { SupplierComponent } from './supplier/supplier.component';
 import { ManagementComponent } from './management/management.component';
 import { PipeComponent } from './pipe/pipe.component';
 import { SupplierOfferComponent } from './supplier-offer/supplier-offer.component';
+import { ApproveOfferComponent } from './approve-offer/approve-offer.component';
+
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import { SupplierOfferComponent } from './supplier-offer/supplier-offer.componen
     ManagementComponent,
     SupplierComponent,
     PipeComponent,
-    SupplierOfferComponent
+    SupplierOfferComponent,
+    ApproveOfferComponent
   ],
   imports: [
     BrowserModule,

@@ -7,17 +7,14 @@
         <a routerLink="../task" routerLinkActive="nav-link-primary"> Tasks </a>
       </div>
       <div class="card-text" *ngIf="task !== null">
-        <div class="row mt-3">
-          <div class="col-8">
-            <div>
-              <label for="laptopname"
-                >Select urgency and target price for this request and then click
-                the Submit button</label
-              >
-              <hr size="3">
-            </div>
-          </div>
+        <div>
+          <label for="laptopname">
+            Select urgency and target price for this request and then click the
+            Submit button
+          </label>
+          <hr size="3" />
         </div>
+        <div class="row mt-3"></div>
         <div class="row mt-3">
           <div class="col-6">
             <div><label>Requested Laptop : </label>{{ task["laptop"] }}</div>

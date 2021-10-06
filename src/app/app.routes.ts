@@ -7,6 +7,7 @@ import { ApproveComponent } from './approve/approve.component';
 import { SupplierComponent } from './supplier/supplier.component';
 import { ManagementComponent } from './management/management.component';
 import { SupplierOfferComponent } from './supplier-offer/supplier-offer.component';
+import { ApproveOfferComponent } from './approve-offer/approve-offer.component';
 
 export const AppRoutes: Routes = [
   {
@@ -56,6 +57,13 @@ export const AppRoutes: Routes = [
         component: SupplierOfferComponent,
         data: {
           breadcrumb: 'Requests for Offers'
+        }
+      },
+      {
+        path: 'approveoffer',
+        component: ApproveOfferComponent,
+        data: {
+          breadcrumb: 'Approve Offers'
         }
       },
       {
