@@ -15,7 +15,7 @@
             </thead>
             <tbody>
               <!-- Putting the click handler on the row breaks responsive button expansion in mobile view-->
-              <tr *ngFor="let task of tasks | filter : 'Approve Offer' ">
+              <tr *ngFor="let task of tasks | filter : 'Manual Approval' ">
                 <td>{{ task["task-id"] }}</td>
                 <td>{{ task["task-subject"] }}</td>
                 <td>{{ task["task-status"] }}</td>
