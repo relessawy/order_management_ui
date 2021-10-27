@@ -32,9 +32,7 @@ export class RequestLaptopComponent implements OnInit {
   submit(laptopName: string) {
     this.kieService.startProcess(laptopName).subscribe((res) => {
       this.messageService.success(`Laptop request submited.`);
-      this.router.navigate(["/home/process"]).then(() => {
-        window.location.reload();
-      });
+      this.router.navigate(["/home/process"])
     });
   }
 }
