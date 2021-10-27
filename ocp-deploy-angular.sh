@@ -2,10 +2,11 @@
 
 project_name="rhpam-mod1"
 oc project ${project_name}
-oc delete all -l app=procurement-process-web
+oc delete all -l app=order-management-ui
 
 oc new-app --strategy="source" \
---name="procurement-process-web" \
+--name="order-management-ui" \
 --code="https://github.com/relessawy/order_management_ui"
 
-oc expose svc/procurement-process-web
+
+oc expose svc/order-management-ui

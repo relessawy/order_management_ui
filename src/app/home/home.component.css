@@ -2,6 +2,13 @@
     margin-top: 20px;
 }
 
+.headerDesc{
+    text-align: center;
+    font-family: Montserrat-Bold;
+    font-size: 2rem;
+    margin-bottom: 20px;
+ }
+
 .btn-secondary {
     text-align: left;
     font-family: Montserrat-Light;

@@ -36,9 +36,9 @@ export class TaskComponent implements OnInit {
 
   go(taskId: number, taskName: string): void {
     if (taskName == "Request Offer")
-      this.router.navigate(['/home/approve'], { queryParams: { id: taskId } });
+      this.router.navigate(['/requestOffer'], { queryParams: { id: taskId } });
     else if (taskName == "Prepare Offer")
-      this.router.navigate(['/home/supplier'], { queryParams: { id: taskId } });
+      this.router.navigate(['/prepareOffer'], { queryParams: { id: taskId } });
     else
       this.router.navigate(['/home/management'], { queryParams: { id: taskId } });
   }

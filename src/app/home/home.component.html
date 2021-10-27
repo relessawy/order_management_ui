@@ -6,16 +6,15 @@
         <div class="col-lg-5 tutorialColSel">
           <ul class="card-text colDesc">
             <li>
-              This is the user interface (UI) for the laptop procurement
-              process displayed on the right.
+              This is the user interface (UI) for the laptop procurement process
+              displayed on the right.
             </li>
             <li>
               The UI has 3 views, choose one of the views in the radio list to
               learn more about each view.
             </li>
             <li>
-              Choose <strong><em>Full Process</em></strong> to
-              return to this page.
+              Choose <strong><em>Process Overview</em></strong> to return to the process diagram.
             </li>
           </ul>
           <div class="btn-group-vertical">
@@ -57,22 +56,21 @@
                 id="areyousure"
                 (click)="fullProcessSelected()"
               />
-              Full Process
+              4. Process Overview
             </button>
           </div>
         </div>
         <div class="col tutorialColDesc">
           <div class="fullProcessDiv" *ngIf="isFullProcess">
+            <h3 class="headerDesc">Process Overview</h3>
             <img
               src="../../assets/img/procurement_process_UI_Zigzag_ver.png"
               alt=""
               width="70%"
             />
-            <p class="card-text processDiagramDisc">
-              Procurement-Process diagram
-            </p>
           </div>
           <div class="employeeDiv" *ngIf="isEmployee">
+            <h3 class="headerDesc">Employee View</h3>
             <ul class="card-text colDesc">
               <li>
                 The <strong><em>Employee</em></strong> view allows you to
@@ -102,6 +100,7 @@
             </div>
           </div>
           <div class="procMangerDiv" *ngIf="isProcManger">
+            <h3 class="headerDesc">Procurement Manager View</h3>
             <ul class="card-text colDesc">
               <li>
                 The <strong><em>Procurement Manager</em></strong> view allows
@@ -136,6 +135,7 @@
             </div>
           </div>
           <div class="supplierDiv" *ngIf="isSupplier">
+            <h3 class="headerDesc">Supplier View</h3>
             <ul class="card-text colDesc">
               <li>
                 The <strong><em>Supplier</em></strong> view allows you to

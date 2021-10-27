@@ -59,6 +59,13 @@ export const AppRoutes: Routes = [
     },
   },
   {
+    path: "task",
+    component: TaskComponent,
+    data: {
+      breadcrumb: "Laptop Requests",
+    },
+  },
+  {
     path: "home",
     component: HomeComponent,
     data: {

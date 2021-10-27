@@ -1,5 +1,19 @@
-.employeeRow
-{
+.tutorialCard {
+    margin-top: 20px;
+}
 
-width: 70%;
+h4 {
+    font-family: Montserrat-Bold;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.colDesc {
+    font-family: Montserrat-Light;
+    font-size: 1.25rem;
+}
+
+.employeeRow {
+    margin-top: 30px;
+    width: 70%;
 }
