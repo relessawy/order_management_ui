@@ -33,7 +33,7 @@ export class ManagementComponent implements OnInit {
         this.messageService.info(
           "Order Approved."
         );
-        this.router.navigate(["/home/task"]);
+        this.router.navigate(["/home/process"]);
       });
   }
 

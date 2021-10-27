@@ -2,11 +2,11 @@
   <div class="card tutorialCard">
     <div class="card-header">Manually Approve Offer</div>
     <div class="card-body">
-      <div class="card-text" *ngIf="task !== null">
+      <div class="card-text" *ngIf="task === null">
         Please claim and start a task from the
         <a routerLink="../task" routerLinkActive="nav-link-primary"> Tasks </a>
       </div>
-      <div class="card-text" *ngIf="task === null">
+      <div class="card-text" *ngIf="task !== null">
         <div>
           <label class="cardDesc" for="laptopname">
             This order could not be auto-approved. Please review order details.

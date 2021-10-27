@@ -46,7 +46,7 @@ export class RequestofferComponent implements OnInit {
       .complete(this.taskInstanceId, this.targetPrice, this.selectedUrgency)
       .subscribe(() => {
         this.messageService.info("Request for offer sent.");
-        this.router.navigate(["/home/task"]);
+        this.router.navigate(["/home/process"]);
       });
   }
 

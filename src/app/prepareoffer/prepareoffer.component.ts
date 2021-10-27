@@ -45,7 +45,7 @@ export class PrepareofferComponent implements OnInit {
       .suppliercomplete(this.taskInstanceId, this.supplierPrice)
       .subscribe(() => {
         this.messageService.info("Offer sent for approval.");
-        this.router.navigate(["/home/task"]);
+        this.router.navigate(["/home/process"]);
       });
   }
 

@@ -41,7 +41,7 @@ export class ApproveOfferComponent implements OnInit {
     else if (taskName == "Prepare Offer")
       this.router.navigate(['/home/supplier'], { queryParams: { id: taskId } });
     else
-      this.router.navigate(['/home/management'], { queryParams: { id: taskId } });
+      this.router.navigate(['/approveOffer'], { queryParams: { id: taskId } });
   }
 
   load(): void {
