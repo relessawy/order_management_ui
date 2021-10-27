@@ -1,6 +1,6 @@
 #!/bin/bash
 
-project_name="rhpam-mod1"
+project_name="rhpam-user1"
 oc project ${project_name}
 oc delete all -l app=order-management-ui
 
