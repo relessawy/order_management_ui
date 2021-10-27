@@ -1,6 +1,6 @@
 <div class="card-deck">
     <div class="card requestsCard">
-      <div class="card-header">Approve Offers</div>
+      <div class="card-header">Offer Requests</div>
       <div class="card-body">
         <div class="table-responsive">
           <table class="table table-striped table-bordered" width="100%">
@@ -15,7 +15,7 @@
             </thead>
             <tbody>
               <!-- Putting the click handler on the row breaks responsive button expansion in mobile view-->
-              <tr *ngFor="let task of tasks | filter : 'Manual Approval' ">
+              <tr *ngFor="let task of tasks | filter: 'Prepare Offer'">
                 <td>{{ task["task-id"] }}</td>
                 <td>{{ task["task-subject"] }}</td>
                 <td>{{ task["task-status"] }}</td>

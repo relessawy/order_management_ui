@@ -5,18 +5,17 @@ import { Router } from '@angular/router';
 import { mergeMap } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-approve-offer',
-  templateUrl: './approve-offer.component.html',
-  styleUrls: ['./approve-offer.component.css']
+  selector: 'app-offer-requsts',
+  templateUrl: './offer-requsts.component.html',
+  styleUrls: ['./offer-requsts.component.css']
 })
-export class ApproveOfferComponent implements OnInit {
-
+export class OfferRequstsComponent implements OnInit {
   tasks: any[] = new Array();
   
   
-  constructor(private kieService: KieService, private messageService: MessageService, private router: Router) {
+  constructor(private kieService: KieService, private messageService: MessageService, private router: Router) { 
     this.load();
-   }
+  }
 
   claimAndStart(taskId: number , taskName: string): void {
     this.kieService.claim(taskId).pipe(
@@ -37,9 +36,9 @@ export class ApproveOfferComponent implements OnInit {
 
   go(taskId: number, taskName: string): void {
     if (taskName == "Request Offer")
-      this.router.navigate(['/home/approve'], { queryParams: { id: taskId } });
+      this.router.navigate(['/requestOffer'], { queryParams: { id: taskId } });
     else if (taskName == "Prepare Offer")
-      this.router.navigate(['/home/supplier'], { queryParams: { id: taskId } });
+      this.router.navigate(['/prepareOffer'], { queryParams: { id: taskId } });
     else
       this.router.navigate(['/home/management'], { queryParams: { id: taskId } });
   }
@@ -53,4 +52,5 @@ export class ApproveOfferComponent implements OnInit {
   ngOnInit() {
     this.load();
   }
+
 }

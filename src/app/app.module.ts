@@ -32,6 +32,7 @@ import { SupplierhomeComponent } from './supplierhome/supplierhome.component';
 import { RequestofferComponent } from './requestoffer/requestoffer.component';
 import { PrepareofferComponent } from './prepareoffer/prepareoffer.component';
 import { LaptoprequestsComponent } from './laptoprequests/laptoprequests.component';
+import { OfferRequstsComponent } from './offer-requsts/offer-requsts.component';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { LaptoprequestsComponent } from './laptoprequests/laptoprequests.compone
     SupplierhomeComponent,
     RequestofferComponent,
     PrepareofferComponent,
-    LaptoprequestsComponent
+    LaptoprequestsComponent,
+    OfferRequstsComponent
   ],
   imports: [
     BrowserModule,

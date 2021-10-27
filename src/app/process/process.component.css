@@ -6,13 +6,13 @@
   margin-top: 20px;
 }
 
-.head {
+thead {
   font-family: Montserrat-Bold;
   font-size: 1.5rem;
   font-weight: bold;
 }
 
-.tbody {
+tbody {
   font-family: Montserrat-Light;
   font-size: 1.5rem;
 }

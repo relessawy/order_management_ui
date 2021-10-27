@@ -13,8 +13,9 @@ import { EmployeehomeComponent } from "./employeehome/employeehome.component";
 import { ProcurementmanagerhomeComponent } from "./procurementmanagerhome/procurementmanagerhome.component";
 import { SupplierhomeComponent } from "./supplierhome/supplierhome.component";
 import { RequestofferComponent } from "./requestoffer/requestoffer.component";
-import { PrepareofferComponent } from './prepareoffer/prepareoffer.component';
-import { LaptoprequestsComponent } from './laptoprequests/laptoprequests.component';
+import { PrepareofferComponent } from "./prepareoffer/prepareoffer.component";
+import { LaptoprequestsComponent } from "./laptoprequests/laptoprequests.component";
+import { OfferRequstsComponent } from "./offer-requsts/offer-requsts.component";
 
 export const AppRoutes: Routes = [
   {
@@ -71,6 +72,27 @@ export const AppRoutes: Routes = [
     component: LaptoprequestsComponent,
     data: {
       breadcrumb: "Laptop Requests",
+    },
+  },
+  {
+    path: "offerRequests",
+    component: OfferRequstsComponent,
+    data: {
+      breadcrumb: "Offer Requests",
+    },
+  },
+  {
+    path: "approveoffersList",
+    component: ApproveOfferComponent,
+    data: {
+      breadcrumb: "Approve Offers",
+    },
+  },
+  {
+    path: "approveOffer",
+    component: ManagementComponent,
+    data: {
+      breadcrumb: "Approve Offer",
     },
   },
   {
