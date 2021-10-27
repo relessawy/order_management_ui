@@ -31,6 +31,7 @@ import { ProcurementmanagerhomeComponent } from './procurementmanagerhome/procur
 import { SupplierhomeComponent } from './supplierhome/supplierhome.component';
 import { RequestofferComponent } from './requestoffer/requestoffer.component';
 import { PrepareofferComponent } from './prepareoffer/prepareoffer.component';
+import { LaptoprequestsComponent } from './laptoprequests/laptoprequests.component';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { PrepareofferComponent } from './prepareoffer/prepareoffer.component';
     ProcurementmanagerhomeComponent,
     SupplierhomeComponent,
     RequestofferComponent,
-    PrepareofferComponent
+    PrepareofferComponent,
+    LaptoprequestsComponent
   ],
   imports: [
     BrowserModule,

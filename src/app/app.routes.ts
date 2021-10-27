@@ -14,6 +14,7 @@ import { ProcurementmanagerhomeComponent } from "./procurementmanagerhome/procur
 import { SupplierhomeComponent } from "./supplierhome/supplierhome.component";
 import { RequestofferComponent } from "./requestoffer/requestoffer.component";
 import { PrepareofferComponent } from './prepareoffer/prepareoffer.component';
+import { LaptoprequestsComponent } from './laptoprequests/laptoprequests.component';
 
 export const AppRoutes: Routes = [
   {
@@ -61,6 +62,13 @@ export const AppRoutes: Routes = [
   {
     path: "task",
     component: TaskComponent,
+    data: {
+      breadcrumb: "Laptop Requests",
+    },
+  },
+  {
+    path: "laptopRequests",
+    component: LaptoprequestsComponent,
     data: {
       breadcrumb: "Laptop Requests",
     },

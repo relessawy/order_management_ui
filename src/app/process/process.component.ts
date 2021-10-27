@@ -16,7 +16,9 @@ export class ProcessComponent implements OnInit {
   modalRef: BsModalRef;
   processes: any[] = new Array();
 
-  constructor(private kieService: KieService, private modalService: BsModalService, private sanitizer: DomSanitizer) { }
+  constructor(private kieService: KieService, private modalService: BsModalService, private sanitizer: DomSanitizer) { 
+    this.load();
+  }
 
   viewProcess(template: TemplateRef<any>, processInstanceId: string) {
     this.kieService.getImage(processInstanceId).subscribe(res => {
