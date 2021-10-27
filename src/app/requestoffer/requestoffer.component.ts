@@ -37,17 +37,15 @@ export class RequestofferComponent implements OnInit {
   load(taskId: number): void {
     this.kieService.getTask(taskId).subscribe((task) => {
       this.task = task;
+      this.setDisplay(this.task["laptop"]);
     });
-    this.laptopName = this.task["laptop"];
-    
-    this.setDisplay(this.laptopName);
   }
 
   submit(): void {
     this.kieService
       .complete(this.taskInstanceId, this.targetPrice, this.selectedUrgency)
       .subscribe(() => {
-        this.messageService.info("Task has been Approved");
+        this.messageService.info("Request for offer sent.");
         this.router.navigate(["/home/task"]);
       });
   }

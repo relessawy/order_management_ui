@@ -3,8 +3,8 @@
     <div class="card-header">Prepare Offer</div>
     <div class="card-body">
       <div class="card-text" *ngIf="task === null">
-        Please claim and start a task from the
-        <a routerLink="../task" routerLinkActive="nav-link-primary"> Tasks </a>
+        Please select a request from this
+        <a routerLink="../task" routerLinkActive="nav-link-primary"> list </a>
       </div>
       <div class="card-text" *ngIf="task !== null">
         <div>
@@ -15,7 +15,7 @@
         <div class="row">
           <div class="col inputCol">
             <div class="userInputItem">
-               <label>Requested Laptop : </label> {{ laptopName }}
+               <label>Requested Laptop : </label> {{ task["laptop"] }}
             </div>
             <!-- Supplier Price -->
             <div class="form-group userInputItem">

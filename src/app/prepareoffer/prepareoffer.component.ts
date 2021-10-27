@@ -35,16 +35,16 @@ export class PrepareofferComponent implements OnInit {
   load(taskId: number): void {
     this.kieService.getTask(taskId).subscribe((task) => {
       this.task = task;
+      this.setDisplay(this.task["laptop"]);
     });
-    this.laptopName = this.task["laptop"];
-    this.setDisplay(this.laptopName);
+ 
   }
 
   supplier(): void {
     this.kieService
       .suppliercomplete(this.taskInstanceId, this.supplierPrice)
       .subscribe(() => {
-        this.messageService.info("Task has been Approved");
+        this.messageService.info("Offer sent for approval.");
         this.router.navigate(["/home/task"]);
       });
   }
