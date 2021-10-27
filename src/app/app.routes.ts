@@ -1,80 +1,135 @@
-import { Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { TaskComponent } from './task/task.component';
-import { StartComponent } from './start/start.component';
-import { ProcessComponent } from './process/process.component';
-import { ApproveComponent } from './approve/approve.component';
-import { SupplierComponent } from './supplier/supplier.component';
-import { ManagementComponent } from './management/management.component';
-import { SupplierOfferComponent } from './supplier-offer/supplier-offer.component';
-import { ApproveOfferComponent } from './approve-offer/approve-offer.component';
+import { Routes } from "@angular/router";
+import { HomeComponent } from "./home/home.component";
+import { TaskComponent } from "./task/task.component";
+import { StartComponent } from "./start/start.component";
+import { ProcessComponent } from "./process/process.component";
+import { ApproveComponent } from "./approve/approve.component";
+import { SupplierComponent } from "./supplier/supplier.component";
+import { ManagementComponent } from "./management/management.component";
+import { SupplierOfferComponent } from "./supplier-offer/supplier-offer.component";
+import { ApproveOfferComponent } from "./approve-offer/approve-offer.component";
+import { RequestLaptopComponent } from "./request-laptop/request-laptop.component";
+import { EmployeehomeComponent } from "./employeehome/employeehome.component";
+import { ProcurementmanagerhomeComponent } from "./procurementmanagerhome/procurementmanagerhome.component";
+import { SupplierhomeComponent } from "./supplierhome/supplierhome.component";
+import { RequestofferComponent } from "./requestoffer/requestoffer.component";
+import { PrepareofferComponent } from './prepareoffer/prepareoffer.component';
 
 export const AppRoutes: Routes = [
   {
-    path: 'home',
+    path: "employeeHome",
+    component: EmployeehomeComponent,
+    data: {
+      breadcrumb: "Employee View",
+    },
+  },
+  {
+    path: "procurementmanagerHome",
+    component: ProcurementmanagerhomeComponent,
+    data: {
+      breadcrumb: "Procurement Manager View",
+    },
+  },
+  {
+    path: "supplierHome",
+    component: SupplierhomeComponent,
+    data: {
+      breadcrumb: "Supplier View",
+    },
+  },
+  {
+    path: "requestOffer",
+    component: RequestofferComponent,
+    data: {
+      breadcrumb: "Request Offer",
+    },
+  },
+  {
+    path: "requestLaptop",
+    component: RequestLaptopComponent,
+    data: {
+      breadcrumb: "Request Laptop",
+    },
+  },
+  {
+    path: "prepareOffer",
+    component: PrepareofferComponent,
+    data: {
+      breadcrumb: "Prepare Offer",
+    },
+  },
+  {
+    path: "home",
     component: HomeComponent,
     data: {
-      breadcrumb: 'Home'
+      breadcrumb: "Home",
     },
     children: [
       {
-        path: 'task',
+        path: "task",
         component: TaskComponent,
         data: {
-          breadcrumb: 'Laptop Requests'
-        }
+          breadcrumb: "Laptop Requests",
+        },
       },
       {
-        path: 'start',
+        path: "start",
         component: StartComponent,
         data: {
-          breadcrumb: 'Request Laptop'
-        }
+          breadcrumb: "Request Laptop",
+        },
       },
       {
-        path: 'process',
+        path: "process",
         component: ProcessComponent,
         data: {
-          breadcrumb: 'Orders'
-        }
+          breadcrumb: "Orders",
+        },
       },
       {
-        path: 'approve',
+        path: "approve",
         component: ApproveComponent,
         data: {
-          breadcrumb: 'Processes'
-        }
+          breadcrumb: "Processes",
+        },
       },
       {
-        path: 'supplier',
+        path: "supplier",
         component: SupplierComponent,
         data: {
-          breadcrumb: 'Processes'
-        }
+          breadcrumb: "Processes",
+        },
       },
       {
-        path: 'supplieroffer',
+        path: "supplieroffer",
         component: SupplierOfferComponent,
         data: {
-          breadcrumb: 'Requests for Offers'
-        }
+          breadcrumb: "Requests for Offers",
+        },
       },
       {
-        path: 'approveoffer',
+        path: "approveoffer",
         component: ApproveOfferComponent,
         data: {
-          breadcrumb: 'Approve Offers'
-        }
+          breadcrumb: "Approve Offers",
+        },
       },
       {
-        path: 'management',
+        path: "management",
         component: ManagementComponent,
         data: {
-          breadcrumb: 'Processes'
-        }
-      }
-    ]
+          breadcrumb: "Processes",
+        },
+      },
+      {
+        path: "requestLaptop",
+        component: RequestLaptopComponent,
+        data: {
+          breadcrumb: "Request Laptop",
+        },
+      },
+    ],
   },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: '**', redirectTo: 'home' }
+  { path: "", redirectTo: "home", pathMatch: "full" },
+  { path: "**", redirectTo: "home" },
 ];

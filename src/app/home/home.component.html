@@ -1,12 +1,173 @@
 <div class="card-deck" *ngIf="route.children.length === 0">
-  <div class="card">
+  <div class="card tutorialCard">
     <div class="card-body">
       <h4 class="card-title">Welcome</h4>
-      <p class="card-text">
-        This is the user interface for the laptop procurement process.
-        
-      </p>
-    </div>  
+      <div class="row tutorialRow">
+        <div class="col-lg-5 tutorialColSel">
+          <ul class="card-text colDesc">
+            <li>
+              This is the user interface (UI) for the laptop procurement
+              process displayed on the right.
+            </li>
+            <li>
+              The UI has 3 views, choose one of the views in the radio list to
+              learn more about each view.
+            </li>
+            <li>
+              Choose <strong><em>Full Process</em></strong> to
+              return to this page.
+            </li>
+          </ul>
+          <div class="btn-group-vertical">
+            <button type="button" class="btn btn-secondary">
+              <input
+                type="radio"
+                name="areyousure"
+                value="employee"
+                id="areyousure"
+                (click)="employeeSelected()"
+              />
+              1. Employee
+            </button>
+            <button type="button" class="btn btn-secondary">
+              <input
+                type="radio"
+                name="areyousure"
+                value="procManager"
+                id="areyousure"
+                (click)="managerSelected()"
+              />
+              2. Procurement Manager
+            </button>
+            <button type="button" class="btn btn-secondary">
+              <input
+                type="radio"
+                name="areyousure"
+                value="supplier"
+                id="areyousure"
+                (click)="supplierSelected()"
+              />
+              3. Supplier
+            </button>
+            <button type="button" class="btn btn-secondary">
+              <input
+                type="radio"
+                name="areyousure"
+                value="fullProcess"
+                id="areyousure"
+                (click)="fullProcessSelected()"
+              />
+              Full Process
+            </button>
+          </div>
+        </div>
+        <div class="col tutorialColDesc">
+          <div class="fullProcessDiv" *ngIf="isFullProcess">
+            <img
+              src="../../assets/img/procurement_process_UI_Zigzag_ver.png"
+              alt=""
+              width="70%"
+            />
+            <p class="card-text processDiagramDisc">
+              Procurement-Process diagram
+            </p>
+          </div>
+          <div class="employeeDiv" *ngIf="isEmployee">
+            <ul class="card-text colDesc">
+              <li>
+                The <strong><em>Employee</em></strong> view allows you to
+                request a laptop.
+              </li>
+              <li>This is the starting point of the procurment process.</li>
+            </ul>
+            <div class="imageToCenter">
+              <img
+                src="../../assets/img/requestLaptop.png"
+                alt="requestLaptop-alt"
+                width="30%"
+              />
+            </div>
+            <ul class="card-text colDesc">
+              <li>
+                To access this view click on
+                <strong><em>Employee</em></strong> in the navigation menu.
+              </li>
+            </ul>
+            <div class="imageToCenter">
+              <img
+                src="../../assets/img/navigateToEmployee.png"
+                alt="requestLaptop-alt"
+                width="70%"
+              />
+            </div>
+          </div>
+          <div class="procMangerDiv" *ngIf="isProcManger">
+            <ul class="card-text colDesc">
+              <li>
+                The <strong><em>Procurement Manager</em></strong> view allows
+                you to request an offer from a supplier.
+              </li>
+              <li>
+                You can also manually approve an
+                <strong><em>Offer</em></strong> if it was rejected by the
+                system.
+              </li>
+            </ul>
+            <div class="imageToCenter">
+              <img
+                src="../../assets/img/procurmManagerActions.png"
+                alt="procManAct-alt"
+                width="60%"
+              />
+            </div>
+            <ul class="card-text colDesc">
+              <li>
+                To access this view click on
+                <strong><em>Procurement Manager</em></strong> in the navigation
+                menu.
+              </li>
+            </ul>
+            <div class="imageToCenter">
+              <img
+                src="../../assets/img/navigateToProcManager.png"
+                alt="requestLaptop-alt"
+                width="70%"
+              />
+            </div>
+          </div>
+          <div class="supplierDiv" *ngIf="isSupplier">
+            <ul class="card-text colDesc">
+              <li>
+                The <strong><em>Supplier</em></strong> view allows you to
+                prepare an offer for the request from the
+                <strong><em>Procurement Manager</em></strong
+                >.
+              </li>
+            </ul>
+            <div class="imageToCenter">
+              <img
+                src="../../assets/img/prepareOffer.png"
+                alt="procManAct-alt"
+                width="30%"
+              />
+            </div>
+            <ul class="card-text colDesc">
+              <li>
+                To access this view click on
+                <strong><em>Supplier</em></strong> in the navigation menu.
+              </li>
+            </ul>
+            <div class="imageToCenter">
+              <img
+                src="../../assets/img/navigateToSupplier.png"
+                alt="requestLaptop-alt"
+                width="70%"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 <router-outlet></router-outlet>

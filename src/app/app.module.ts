@@ -25,6 +25,12 @@ import { ManagementComponent } from './management/management.component';
 import { PipeComponent } from './pipe/pipe.component';
 import { SupplierOfferComponent } from './supplier-offer/supplier-offer.component';
 import { ApproveOfferComponent } from './approve-offer/approve-offer.component';
+import { RequestLaptopComponent } from './request-laptop/request-laptop.component';
+import { EmployeehomeComponent } from './employeehome/employeehome.component';
+import { ProcurementmanagerhomeComponent } from './procurementmanagerhome/procurementmanagerhome.component';
+import { SupplierhomeComponent } from './supplierhome/supplierhome.component';
+import { RequestofferComponent } from './requestoffer/requestoffer.component';
+import { PrepareofferComponent } from './prepareoffer/prepareoffer.component';
 
 
 @NgModule({
@@ -42,7 +48,13 @@ import { ApproveOfferComponent } from './approve-offer/approve-offer.component';
     SupplierComponent,
     PipeComponent,
     SupplierOfferComponent,
-    ApproveOfferComponent
+    ApproveOfferComponent,
+    RequestLaptopComponent,
+    EmployeehomeComponent,
+    ProcurementmanagerhomeComponent,
+    SupplierhomeComponent,
+    RequestofferComponent,
+    PrepareofferComponent
   ],
   imports: [
     BrowserModule,

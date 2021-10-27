@@ -35,6 +35,12 @@ export class AppComponent {
   sidebarVisible: boolean;
   username: string;
   messages: MessageItem[];
+  requestOffersOn: boolean=false;
+  requestLaptopOn: boolean=false;
+  prepareOffersOn: boolean=false;
+  approveOffersOn: boolean=false;
+  viewOrdersOn: boolean=false;
+  
 
   constructor(private messageHistoryService: MessageHistoryService) {
     this.chartIcon = faChartPie;
@@ -49,6 +55,7 @@ export class AppComponent {
     this.sidebarVisible = true;
     this.messages = new Array();
     this.username = '';
+    this.setHomeMenu();
   }
   
   clickEvent(){
@@ -63,4 +70,39 @@ export class AppComponent {
   ngOnInit(): void {
     this.messages = this.messageHistoryService.getHistory();
   }
+
+  
+
+  setEmployeeHomeMenu(){
+    this.requestOffersOn=false;
+    this.requestLaptopOn=true;
+    this.prepareOffersOn=false;
+    this.approveOffersOn=false;
+    this.viewOrdersOn=true;
+  } 
+
+  setHomeMenu(){
+    this.requestOffersOn=false;
+    this.requestLaptopOn=false;
+    this.prepareOffersOn=false;
+    this.approveOffersOn=false;
+    this.viewOrdersOn=false;
+  } 
+
+  setHomeProcurementMenu(){
+    this.requestOffersOn=true;
+    this.requestLaptopOn=false;
+    this.prepareOffersOn=false;
+    this.approveOffersOn=true;
+    this.viewOrdersOn=true;
+  } 
+
+  setSupplierMenu(){
+    this.requestOffersOn=false;
+    this.requestLaptopOn=false;
+    this.prepareOffersOn=true;
+    this.approveOffersOn=false;
+    this.viewOrdersOn=false;
+  } 
+
 }
