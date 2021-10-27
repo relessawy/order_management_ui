@@ -12,6 +12,7 @@ export class ManagementComponent implements OnInit {
   task: any = null;
   taskInstanceId: number;
   isApproved: boolean;
+  message: string;
 
   constructor(
     private kieService: KieService,
@@ -31,7 +32,7 @@ export class ManagementComponent implements OnInit {
       .managementcomplete(this.taskInstanceId, this.isApproved)
       .subscribe(() => {
         this.messageService.info(
-          "Order Approved."
+          this.message
         );
         this.router.navigate(["/home/process"]);
       });
@@ -48,8 +49,10 @@ export class ManagementComponent implements OnInit {
 
   selectedYes() {
     this.isApproved = true;
+    this.message="Order Approved.";
   }
   selectedNo() {
     this.isApproved = false;
+    this.message="Order Rejected";
   }
 }
