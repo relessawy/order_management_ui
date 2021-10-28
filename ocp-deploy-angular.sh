@@ -1,7 +1,6 @@
 #!/bin/bash
 
-project_name="rhpam-user1"
-oc project ${project_name}
+oc project rhpam-user2
 oc delete all -l app=order-management-ui
 
 oc new-app --strategy="source" \
