@@ -17,7 +17,6 @@ export class ProcessComponent implements OnInit {
   processes: any[] = new Array();
 
   constructor(private kieService: KieService, private modalService: BsModalService, private sanitizer: DomSanitizer) { 
-    this.load();
   }
 
   viewProcess(template: TemplateRef<any>, processInstanceId: string) {
@@ -36,6 +35,10 @@ export class ProcessComponent implements OnInit {
   }
 
   ngOnInit() {
+    // this.load();
+  }
+
+  ngOnChanges(){
     this.load();
   }
 
