@@ -50,10 +50,8 @@ export class TaskComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.load();
-  }
-
-  ngOnChanges(){
     this.load();
   }
+
+ 
 }
