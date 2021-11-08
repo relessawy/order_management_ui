@@ -47,6 +47,10 @@ export class SupplierOfferComponent implements OnInit {
   }
 
   ngOnInit() {
+    // this.load();
+  }
+
+  ngOnChanges(){
     this.load();
   }
 }

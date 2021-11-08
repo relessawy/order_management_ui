@@ -51,6 +51,10 @@ export class ApproveOfferComponent implements OnInit {
   }
 
   ngOnInit() {
+    // this.load();
+  }
+
+  ngOnChanges(){
     this.load();
   }
 }

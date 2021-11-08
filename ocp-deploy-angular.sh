@@ -1,6 +1,6 @@
 #!/bin/bash
 
-oc project rhpam-user5
+oc project rhpam-mod1
 oc delete all -l app=order-management-ui
 
 oc new-app --strategy="source" \

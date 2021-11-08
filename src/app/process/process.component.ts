@@ -38,7 +38,7 @@ export class ProcessComponent implements OnInit {
     // this.load();
   }
 
-  ngOnChanges(){
+  ngDoCheck(){
     this.load();
   }
 
