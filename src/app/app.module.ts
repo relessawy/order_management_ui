@@ -65,7 +65,7 @@ import { OfferRequstsComponent } from './offer-requsts/offer-requsts.component';
     FormsModule,
     FontAwesomeModule,
     HttpClientModule,
-    RouterModule.forRoot(AppRoutes),
+    RouterModule.forRoot(AppRoutes,{ onSameUrlNavigation: 'reload' }),
     BsDropdownModule.forRoot(),
     ModalModule.forRoot(),
     CommonModule,

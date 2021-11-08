@@ -4,7 +4,9 @@ import { BsModalService } from "ngx-bootstrap/modal";
 import { BsModalRef } from "ngx-bootstrap/modal";
 import { ModalOptions } from "ngx-bootstrap/modal/modal-options.class";
 import { SafeHtml, DomSanitizer } from "@angular/platform-browser";
-import { ActivatedRoute, ParamMap } from "@angular/router";
+import { NavigationEnd, Router, RouterEvent } from "@angular/router";
+import { filter } from "rxjs";
+
 
 @Component({
   selector: "app-process",
@@ -15,12 +17,13 @@ export class ProcessComponent implements OnInit {
   svg: SafeHtml;
   modalRef: BsModalRef;
   processes: any[] = new Array();
-  private activatedRoute: ActivatedRoute;
+  
 
   constructor(
     private kieService: KieService,
     private modalService: BsModalService,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    private router: Router
   ) {}
 
   viewProcess(template: TemplateRef<any>, processInstanceId: string) {
@@ -43,11 +46,12 @@ export class ProcessComponent implements OnInit {
   // }
 
   ngOnInit(): void {
-    this.activatedRoute.queryParamMap.subscribe((paramMap: ParamMap) => {
-      const refresh = paramMap.get("refresh");
-      if (refresh) {
-        this.load();
-      }
+    this.router.events.pipe(
+      filter((event: RouterEvent) => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      this.load();
     });
   }
+
+ 
 }
