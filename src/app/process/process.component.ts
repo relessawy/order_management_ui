@@ -1,45 +1,53 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
-import { KieService } from '../kie.service';
-import { BsModalService } from 'ngx-bootstrap/modal';
-import { BsModalRef } from 'ngx-bootstrap/modal';
-import { ModalOptions } from 'ngx-bootstrap/modal/modal-options.class';
-import { SafeHtml, DomSanitizer } from '@angular/platform-browser';
+import { Component, OnInit, TemplateRef } from "@angular/core";
+import { KieService } from "../kie.service";
+import { BsModalService } from "ngx-bootstrap/modal";
+import { BsModalRef } from "ngx-bootstrap/modal";
+import { ModalOptions } from "ngx-bootstrap/modal/modal-options.class";
+import { SafeHtml, DomSanitizer } from "@angular/platform-browser";
+import { ActivatedRoute, ParamMap } from "@angular/router";
 
 @Component({
-  selector: 'app-process',
-  templateUrl: './process.component.html',
-  styleUrls: ['./process.component.css']
+  selector: "app-process",
+  templateUrl: "./process.component.html",
+  styleUrls: ["./process.component.css"],
 })
 export class ProcessComponent implements OnInit {
-
-  svg: SafeHtml
+  svg: SafeHtml;
   modalRef: BsModalRef;
   processes: any[] = new Array();
+  private activatedRoute: ActivatedRoute;
 
-  constructor(private kieService: KieService, private modalService: BsModalService, private sanitizer: DomSanitizer) { 
-  }
+  constructor(
+    private kieService: KieService,
+    private modalService: BsModalService,
+    private sanitizer: DomSanitizer
+  ) {}
 
   viewProcess(template: TemplateRef<any>, processInstanceId: string) {
-    this.kieService.getImage(processInstanceId).subscribe(res => {
+    this.kieService.getImage(processInstanceId).subscribe((res) => {
       this.svg = this.sanitizer.bypassSecurityTrustHtml(res);
 
-      const config: ModalOptions = { class: 'modal-lg' };
+      const config: ModalOptions = { class: "modal-lg" };
       this.modalRef = this.modalService.show(template, config);
-    })
-  }
-
-  load(): void {
-    this.kieService.getProcesses().subscribe(res => {
-      this.processes = res['process-instance'];
     });
   }
 
-  ngOnInit() {
-    // this.load();
+  load(): void {
+    this.kieService.getProcesses().subscribe((res) => {
+      this.processes = res["process-instance"];
+    });
   }
 
-  ngDoCheck(){
-    this.load();
-  }
+  // ngOnInit() {
+  //   this.load();
+  // }
 
+  ngOnInit(): void {
+    this.activatedRoute.queryParamMap.subscribe((paramMap: ParamMap) => {
+      const refresh = paramMap.get("refresh");
+      if (refresh) {
+        this.load();
+      }
+    });
+  }
 }
