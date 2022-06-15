@@ -53,5 +53,8 @@ export class OfferRequstsComponent implements OnInit {
     this.load();
   }
 
+  ngAfterViewInit(){
+    this.load();
+  }
 
 }

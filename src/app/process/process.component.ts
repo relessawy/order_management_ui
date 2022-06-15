@@ -45,6 +45,10 @@ export class ProcessComponent implements OnInit {
     this.load();
   }
 
+  ngAfterViewInit(){
+    this.load();
+  }
+
   // ngOnInit(): void {
   //   this.router.events.pipe(
   //     filter((event: RouterEvent) => event instanceof NavigationEnd)

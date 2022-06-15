@@ -12,9 +12,9 @@ let app = express();
 
 app.set('port', process.env.PORT || 8080);
 
-//app.set('kie', process.env.KIE || 'http://kieserver-http-rhpam-mod1.apps.cluster-zp67m.zp67m.sandbox944.opentlc.com/');
+app.set('kie', 'http://kieserver-http-rhpam-user6.apps.cluster-crv6x.crv6x.sandbox1458.opentlc.com/');
 
-app.set('kie', process.env.KIE );
+//app.set('kie', process.env.KIE );
 
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
@@ -39,6 +39,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+
+
 
 // proxy to kie server
 app.use(
