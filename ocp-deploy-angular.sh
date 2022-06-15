@@ -10,6 +10,7 @@ oc delete bc order-management-ui
 oc delete svc order-management-ui
 oc delete route order-management-ui
 oc delete deployment order-management-ui
+oc delete is order-management-ui
 
 oc new-app --strategy="source" \
 --name="order-management-ui" \
